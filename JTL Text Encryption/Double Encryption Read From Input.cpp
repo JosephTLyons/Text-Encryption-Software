@@ -18,7 +18,6 @@ const int SHIFT_SET_32        = 32;   //Move range up 32 values form (0-93) to (
 /*
 
  add line comments
- change password to vector
  split large dual purpose function into two smaller one purpose functions
  
  clean up rest of code nicely
@@ -86,7 +85,8 @@ void EncryptDecryptMessage(int Choice)
     
     srand(PasswordNumber);//Seed number for my random number generator
     
-    /* CYCLE THROUGH THE RANDOM NUMBERS WITH PASSWORDNUMBER TO ARRIVE AT A TRULY RANDOM NUMBER */
+    /* CYCLE THROUGH THE RANDOM NUMBERS WITH PASSWORDNUMBER TO ARRIVE AT A TRULY RANDOM NUMBER 
+        AND FILL THREE KEYS, EACH WITH THEIR OWN UNIQUE SET OF NUMBERS */
     
     RunThroughRandomNumbers(PasswordNumber);
     
@@ -162,8 +162,10 @@ void WordToNumberConverter(int &PassNumber, vector <char> & Password)
     }
 }
 
-void RunThroughRandomNumbers(int PasswordNum)//cycles through random numbers randomly
+void RunThroughRandomNumbers(int PasswordNum)
 {
+    /* CYCLES THROUGH RANDOM NUMBERS RANDOMLY */
+    
     int LoopLimit = rand() / PasswordNum;
     
     for (int i = 0; i <= LoopLimit; ++i)
