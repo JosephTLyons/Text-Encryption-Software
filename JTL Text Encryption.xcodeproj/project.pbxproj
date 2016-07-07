@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		990197261C8FE4AE00E7D85F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990197251C8FE4AE00E7D85F /* main.cpp */; };
+		991FAF761C97B215007D3A01 /* Double Encryption Read From Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 991FAF751C97B215007D3A01 /* Double Encryption Read From Input.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		990197221C8FE4AE00E7D85F /* JTL Text Encryption */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "JTL Text Encryption"; sourceTree = BUILT_PRODUCTS_DIR; };
-		990197251C8FE4AE00E7D85F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		991FAF751C97B215007D3A01 /* Double Encryption Read From Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Double Encryption Read From Input.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 		990197241C8FE4AE00E7D85F /* JTL Text Encryption */ = {
 			isa = PBXGroup;
 			children = (
-				990197251C8FE4AE00E7D85F /* main.cpp */,
+				991FAF751C97B215007D3A01 /* Double Encryption Read From Input.cpp */,
 			);
 			path = "JTL Text Encryption";
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				990197261C8FE4AE00E7D85F /* main.cpp in Sources */,
+				991FAF761C97B215007D3A01 /* Double Encryption Read From Input.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +237,7 @@
 				9901972B1C8FE4AE00E7D85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
