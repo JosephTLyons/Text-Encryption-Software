@@ -17,11 +17,17 @@ const int SHIFT_SET_32        = 32;   //Move range up 32 values form (0-93) to (
 
 /*
 
+ --------------------- BUGS AND FIXES ------------------------------
+ 
  add line comments
  split large dual purpose function into two smaller one purpose functions
  
  clean up rest of code nicely
- use of const / & on varibles that apply
+ use of const / & on parameters that apply
+ 
+ --------------------- NEW FEATURES --------------------------------
+ 
+ automatically copy the encrypted/decoded message into mac clipboard
  
 */
 
@@ -29,15 +35,13 @@ int main()
 {
     int Choice;
     
-    cout << "\nJTL Text Encryption\n\n";
-    
     do
     {
-        cout << "=======================" << endl;
-        cout << "Press 1 to encrypt"      << endl;
-        cout << "Press 2 to decrypt"      << endl;
-        cout << "Press other key to quit" << endl << endl;
-        cout << "Choice: ";
+        cout << "=======================";
+        cout << "\nPress 1 to encrypt";
+        cout << "\nPress 2 to decrypt";
+        cout << "\nPress other key to quit";
+        cout << "\n\nChoice: ";
         
         cin >> Choice;
         
@@ -52,7 +56,7 @@ int main()
 void EncryptDecryptMessage(int Choice)
 {
     vector <char> Password;
-    char TemporaryVectorHolder;
+    char TemporaryCharacterHolder;
     
     int  PasswordNumber = 1;
     
@@ -74,10 +78,10 @@ void EncryptDecryptMessage(int Choice)
     
     do
     {
-        cin.get(TemporaryVectorHolder);
-        Password.push_back(TemporaryVectorHolder);
+        cin.get(TemporaryCharacterHolder);
+        Password.push_back(TemporaryCharacterHolder);
     }
-    while (TemporaryVectorHolder != '\n');
+    while (TemporaryCharacterHolder != '\n');
     
     /* TURN PASSWORD INTO A NUMBER */
     
