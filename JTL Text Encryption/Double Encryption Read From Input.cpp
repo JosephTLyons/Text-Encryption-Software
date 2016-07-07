@@ -1,10 +1,11 @@
 #include <iostream> //for input/output stream
+#include <vector>
 
 using namespace std;
 
 void EncryptDecryptMessage(int Choice);
 
-void WordToNumberConverter(int &PassNumber, char Password[]);
+void WordToNumberConverter(int &PassNumber, vector <char> & Password);
 void RunThroughRandomNumbers(int PasswordNum);
 void FillKey(char KeyBeingFilled[]);
 
@@ -13,7 +14,6 @@ char DecryptMessage(char KeyForDecrypting[], char Input);
 
 const int ASCII_RANGE_SIZE_94 = 94;   //Range from ASCII value 32 to 126 = 94
 const int SHIFT_SET_32        = 32;   //Move range up 32 values form (0-93) to (32 to 126)
-const int PASSWORD_LENGHT_25  = 25;
 
 /*
 
@@ -52,13 +52,16 @@ int main()
 
 void EncryptDecryptMessage(int Choice)
 {
-    char Password[PASSWORD_LENGHT_25];
+    vector <char> Password;
+    char TemporaryVectorHolder;
     
     int  PasswordNumber = 1;
     
     char Key1[ASCII_RANGE_SIZE_94] = {0};//One larger 0 - 93, not using 0
     char Key2[ASCII_RANGE_SIZE_94] = {0};
     char Key3[ASCII_RANGE_SIZE_94] = {0};
+    
+    /* ENTER A PASSWORD FOR ENCRYPTION/DECRYPTION - IT IS USED TO SEED THE RANDOM NUMBER GENERATOR */
     
     char InputCharacter1, InputCharacter2, InputCharacter3;
     
@@ -67,13 +70,23 @@ void EncryptDecryptMessage(int Choice)
     
     else
         cout << "\nEnter given encryption password: ";
-        
     
-    cin.getline(Password, PASSWORD_LENGHT_25);
+    /* STORE PASSWORD IN VECTOR */
+    
+    do
+    {
+        cin.get(TemporaryVectorHolder);
+        Password.push_back(TemporaryVectorHolder);
+    }
+    while (TemporaryVectorHolder != '\n');
+    
+    /* TURN PASSWORD INTO A NUMBER */
     
     WordToNumberConverter(PasswordNumber, Password);
     
     srand(PasswordNumber);//Seed number for my random number generator
+    
+    /* CYCLE THROUGH THE RANDOM NUMBERS WITH PASSWORDNUMBER TO ARRIVE AT A TRULY RANDOM NUMBER */
     
     RunThroughRandomNumbers(PasswordNumber);
     
@@ -140,9 +153,9 @@ void EncryptDecryptMessage(int Choice)
     cout << "\n\n";
 }
 
-void WordToNumberConverter(int &PassNumber, char Password[])
+void WordToNumberConverter(int &PassNumber, vector <char> & Password)
 {
-    for (int i = 0; Password[i]; i++)
+    for (int i = 0; Password[i] != '\n'; i++)
     {
         PassNumber += (int) Password[i];
         PassNumber += i;
