@@ -1,4 +1,5 @@
-#include <iostream>
+#include <iostream> //for input/output stream
+
 using namespace std;
 
 void EncryptDecryptMessage(int Choice);
@@ -13,6 +14,17 @@ char DecryptMessage(char KeyForDecrypting[], char Input);
 const int ASCII_RANGE_SIZE_94 = 94;   //Range from ASCII value 32 to 126 = 94
 const int SHIFT_SET_32        = 32;   //Move range up 32 values form (0-93) to (32 to 126)
 const int PASSWORD_LENGHT_25  = 25;
+
+/*
+
+ add line comments
+ change password to vector
+ split large dual purpose function into two smaller one purpose functions
+ 
+ clean up rest of code nicely
+ use of const / & on varibles that apply
+ 
+*/
 
 int main()
 {
